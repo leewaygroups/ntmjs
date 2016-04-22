@@ -47,12 +47,15 @@ compile-stylus:
     and watch origin
 :compile-stylus
 
-# then, while, and, +, and > are all keywords I have created for you to make your tasking more fluid and enjoyable.
+# then, while, and, +, and > are all keywords I have
+# created for you to make your tasking more fluid and enjoyable.
 
 # then, > | chainers
 # while, and, + | concurrentenators™
 
-# By following my 'stylus [path] to [path]' compiler with 'then uglify it', I have created a chained task that will not fire until the stylus compiler is finished.
+# By following my 'stylus [path] to [path]' compiler
+# with 'then uglify it', I have created a chained task
+# that will not fire until the stylus compiler is finished.
 
 
 compileAndWatchCoffee:
@@ -62,9 +65,19 @@ compileAndWatchCoffee:
     then watch origin
 :compileAndWatchCoffee
 
-# it, them, origin, and origins all refer to previously used paths. origin will always refer to the very first path referenced in this task, origins will reference the very first path referenced after each module call, and it/them are the same thing, both referring to the most recent path reference. it and them are meant to be used accordingly to help you style and understand your code better.
+# it, them, origin, and origins all refer to previously 
+# used paths. origin will always refer to the very first 
+# path referenced in this task, origins will reference
+# the very first path referenced after each module call,
+# and it/them are the same thing, both referring to the 
+# most recent path reference. it and them are meant to
+# be used accordingly to help you style and understand
+# your code better.
 
-# (i.e, if most recent path is a directory, use it as it refers to a singular thing. If most recent path was to a slew of files like [./path/**/*.*], use the them keyword. It just makes sense. :)
+# (i.e, if most recent path is a directory, use it 
+# as it refers to a singular thing. If most recent
+# path was to a slew of files like [./path/**/*.*],
+# use the them keyword. It just makes sense. :)
 
 
 main:
@@ -72,7 +85,8 @@ main:
   + @compileStylus
 :main
 
-BOOM. Now we have a main build task that uses multiple tasks that we have defined and runs them concurrently.
+# BOOM. Now we have a main build task that uses multiple
+# tasks that we have defined and runs them concurrently.
 ```
 
 
@@ -84,19 +98,15 @@ BOOM. Now we have a main build task that uses multiple tasks that we have define
 
 # The heart and soul of **ntm** `is` **npm**.
 
-___
-> ## 'npm is such a great build tool',they said
+> ### 'npm is such a great build tool',they said
+> ### 'it is just so verbose and such a mess', they said.
+---
 
-> ## 'it is just so verbose and such a mess', they said.
-
-## **Here's ntm, I said.**
-
+# **Here's ntm, I said. Thank me later.**
 
 ntm is npm, and that is all there is to it. Although I believe is a more than a language, that it is a system based on a beautiful compiled syntax, deep down I know that when you call that `ntm do-a-task` command, it is the power of npm that shines through.
 
-> 
->## And maybe... Just maybe. One day we can all see that the one we needed was here for us all along, ready to care for our every need. <3 **npm**     
-> 
+And maybe... Just maybe. One day we can all see that the one we needed was here for us all along, ready to care for our every need. <3 **npm**
 
 
 ---
