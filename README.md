@@ -5,10 +5,10 @@
 
 # **ntm** | *<small>a build tool to end build tools</small>*
 
-## **ntm** has access to each of npm's 280,000 packages, introduces beautiful and friendly syntax, and `all your build are belong to it.`
+## **ntm** has access to each of npm's 280,000 packages, introduces beautiful and friendly syntax, and `all your builds belong to it.`
 
 
-Many respectable web developers vouch for npm as a build tool and task runner, but none of them are afraid to to admit that declaring tasks inside of your package.json is far from appealing and can quickly become a nightmare to navigate.
+Many respectable web developers vouch for npm as a build tool and task runner, but none of them are afraid to admit that declaring tasks inside of your package.json is far from appealing and can quickly become a nightmare to navigate.
 
 - [Give Grunt the Boot | SitePoint](http://www.sitepoint.com/guide-to-npm-as-a-build-tool/)
 - [Introduction to Using NPM as a Build Tool](https://medium.com/@dabit3/introduction-to-using-npm-as-a-build-tool-b41076f488b0)
@@ -30,7 +30,7 @@ Many respectable web developers vouch for npm as a build tool and task runner, b
 ---
 
 
-#### The ntm *language* is a very beautiful and easy to comprehend. The language is compiled, not into JavaScript, but into command line scripts that allow you to leverage the full potential of npm as a build tool/task runner without the hell that accompanies working out of the `package.json` 'scripts' object.
+#### The ntm *language* is very beautiful and easy to comprehend. The language is compiled, not into JavaScript, but into command line scripts that allow you to leverage the full potential of npm as a build tool/task runner without the hell that accompanies working out of the `package.json` 'scripts' object.
 
 
 On line one of your `tasks.ntm` file, begin by stating all of the different tools/modules you plan to utilize throughout your `tasks.ntm` file. Seperate them between lines, place them in an array, whatever you like. One of the only rules is that your requirement list must end with GO-NTM.
@@ -72,7 +72,7 @@ main:
 
 ```
 
-ntm offers keywords that save you time, efford, and keystrokes. There are three categories of keywords: reference keywords, chaining keywords, and concurrency keywords. Keyword are *not* case sensitive.
+ntm offers keywords that save you time, effort, and keystrokes. There are three categories of keywords: reference keywords, chaining keywords, and concurrency keywords. Keyword are *not* case sensitive.
 
 ## Reference Keywords | `it` `them` `origin` `origins`
   The keywords it and them provide identical functionality: acting as a variable holding the most recently parsed path. The only difference is the cases in which each should be used. If the previous [path] in the task block is a singular file or folder, using the it keyword makes sense to use. If the most recent path refers to multiple files or directories, them will make your code more readable.
