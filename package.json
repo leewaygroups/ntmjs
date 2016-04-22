@@ -1,0 +1,31 @@
+{
+  "name": "ntmjs",
+  "version": "0.0.1",
+  "description": "A beautiful and simplistic build tool to end build tools.",
+  "main": "ntm.js",
+  "scripts": {
+    "test": "echo Test."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glyden/ntmjs.git"
+  },
+  "keywords": [
+    "build",
+    "tool",
+    "npm",
+    "nodejs",
+    "task",
+    "runner",
+    "compile",
+    "sass",
+    "babel",
+    "coffee"
+  ],
+  "author": "glyden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glyden/ntmjs/issues"
+  },
+  "homepage": "https://github.com/glyden/ntmjs#readme"
+}

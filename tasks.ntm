@@ -1,0 +1,78 @@
+coffee-script babel babel-cli stylus
+sass less type-script forever watch
+pokemon leftpad concats watch uglify
+GO-NTM
+
+# ^At the very beginning of your tasks.ntm file,
+# state all of the dependencies you need access to.
+# Think of this as a simple, concatenated require()
+# list. Oh yeah, it must end with GO-NTM .
+#-----------------------------------------------#
+
+
+# This is a preview of ntm's syntax. It is very
+# simple and to the point. Each of these blocks
+# is a task definition. I will provide more 'read
+# world uses' soon.
+#------------------------------------------------#
+
+# When you name a task, that name becomes the
+# container for the task definition. The definition
+# begins with a line consisting of the task's name,
+# a colon, and nothing else. The definition ends
+# with a line that begins with a colon and is
+# followed by the task's name and nothing else.
+#------------------------------------------------#
+
+compile-coffee:
+  coffee [./src/coffee/*.coffee] [./dist/js/]
+  + uglify it
+  + concat it
+  + watch origin
+:compile-coffee
+
+# I have gifted you with 'it' and 'them' keywords
+# to easly reference the most previously spotted
+# path, as well as 'origin' to refer to the very
+# first path in the task, and 'origins' to reference
+# every path appearing directly after a module name.
+
+# 'it' and 'them are the same thing, but are meant
+# to be used in accordingly, in order to make your
+# tasks.ntm file as human-readable (and understand
+# -able!) as possible.
+
+compile-babel:
+  babel [./src/babel/*.es6.js] to [./dist/js/]
+  > uglify it
+  > concats it
+  > watch origin
+:compile-babel
+
+# That's not enough for you?! Well, then... 'while',
+# 'and', and 'then' are also keywords at your disposal
+# to create concurrent/chained tasks. ('+' and '>' too!)
+
+# 'while', 'and', and '+' all create concurrent tasks.
+# 'then' and '>' indicate chained tasks.
+#------------------------------------------------#
+
+compile-stylus:
+  stylus [./src/stylus/*.stylus] , [./dist/js/]
+  then uglify it
+  while concat it
+  and watch origin
+:compile-stylus
+
+# Very easily create a task out of tasks!
+
+build:
+  @compile-babel
+  + @compile-stylus
+
+
+# IN THE WORKS:
+#   - variables
+#   - more useful keywords
+#   - built in functionality to reduce
+#       your dependencies.
