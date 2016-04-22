@@ -1,62 +1,60 @@
-<small>On April 20th at 4am I woke up and tweeted that I would build a tool to render Gulp and Grunt (as well as their 37 counsins and nephews) obsolete, and that I would do so in 36 hours, never having touched Node.js in my life. Exactly 36 hours later, I had this semi-functional prototype of ntm. Although this is not a working application just yet, it is well on its way and very capable of everything I promised.</small>
+[gmail](mailto:glydenjs@gmail.com) | [facebook](https://www.facebook.com/100009001120071) | [twitter](https://twitter.com/glydenjs) | [linkedin](https://www.linkedin.com/in/colton-colcleasure-73732293) | [medium](https://medium.com/@glyden)
 
-
-
-<center>**GLYDEN** | [gmail](mailto:glydenjs@gmail.com) | [facebook](https://www.facebook.com/100009001120071) | [twitter](https://twitter.com/glydenjs) | [linkedin](https://www.linkedin.com/in/colton-colcleasure-73732293) | [medium](https://medium.com/@glyden)
-
-<br>
-<br>
-
-
-![GLYDENJS](http://s31.postimg.org/sqatwegqj/ntm_glyden.jpg)</center>
+![GLYDENJS](http://s31.postimg.org/sqatwegqj/ntm_glyden.jpg)
 
 
 # **ntm** | *<small>a build tool to end build tools</small>*
 
-## **ntm** has access to each of npm's 280,000 packages, introduces beautiful and friendly syntax, and ***all your build are belong to it.***
+## **ntm** has access to each of npm's 280,000 packages, introduces beautiful and friendly syntax, and `all your build are belong to it.`
 
 
 Many respectable web developers vouch for npm as a build tool and task runner, but none of them are afraid to to admit that declaring tasks inside of your package.json is far from appealing and can quickly become a nightmare to navigate.
 
-<small>*Hell, I just opted out of providing an example of a package.json's scripts section because it was so damn hideous.*</small>
+- [Give Grunt the Boot | SitePoint](http://www.sitepoint.com/guide-to-npm-as-a-build-tool/)
+- [Introduction to Using NPM as a Build Tool](https://medium.com/@dabit3/introduction-to-using-npm-as-a-build-tool-b41076f488b0)
+- [Why npm Scripts? | CSS-Tricks](https://css-tricks.com/why-npm-scripts/)
+- [Using npm as a Build Tool for Your Next Project](https://drublic.de/blog/npm-builds/)
+- [NPM as a Build Tool](http://clickherelabs.com/2016/03/npm-as-a-build-tool/)
+- [Yo dawg, I heard you like build tools...](http://amsul.ca/2015/11/06/yo-dawg-i-heard-you-like-build-tools/)
 
-***THIS APPLICATION IS NOT FUNCTIONAL*** *DO NOT TRY AT HOME*
+#### I, too, believe that our day to day build tasks can be handled without extravagant and well branded task runners, but I also believe that there should be beauty in code. *Something that npm surely ~~does~~ did not offer.*
 
-![ntm](http://s31.postimg.org/st3fxau9n/bigntm.jpg)
+> On April 20th at 4am I woke up, frustrated with the capricious nature of the task runners I had been dealing with, and tweeted that I would build a tool to render Gulp and Grunt (as well as their 37 counsins and nephews) obsolete, and that I would do so in 36 hours, never having touched Node.js in my life. Exactly 36 hours later, I had this semi-functional prototype of ntm. Although this is not a working application just yet, it is well on its way and very capable of everything I had originally imagined.
+
+## *THIS APPLICATION IS NOT FUNCTIONAL*
+
 ---
-<br>
 
-# **Let's dive in and take a look at the syntax.**
-*I am in need of somebody to help me create a new grammar/syntax highligting for ntm, so please contact me if you are interested in assisting with that.*  -**glydenjs@gmail.com**
+# **SYNTAX**
 
 ---
 
 
-### The ntm *language* is a very beautiful and easy to comprehend. The language is compiled, not into JavaScript, but into command line scripts that allow you to leverage the full potential of npm as a build tool/task runner without the hell that accomponies working out of the npm 'scripts' object.
+#### The ntm *language* is a very beautiful and easy to comprehend. The language is compiled, not into JavaScript, but into command line scripts that allow you to leverage the full potential of npm as a build tool/task runner without the hell that accompanies working out of the `package.json` 'scripts' object.
 
-*These are not real world examples. Please do not uglify while concatenating your files.*
+
+On line one of your `tasks.ntm` file, begin by stating all of the different tools/modules you plan to utilize throughout your `tasks.ntm` file. Seperate them between lines, place them in an array, whatever you like. One of the only rules is that your requirement list must end with GO-NTM.
 
 ```
 // tasks.ntm //
-stylus GO-NTM
 
+stylus coffee-script babel-cli
+type-script sass stylus less post-css
 
+GO-NTM
+```
+
+## There are few rules pertaining to defining tasks.
+
+The first rule is that the block must open with the task name followed by a colon, and the last line must be a colon followed by the task name. The second rule is that paths must be contained in square brackets. The last rule is that keywords, paths, and module names must be separated with single spaces. (This will become more flexible in the future.)
+
+```
 compile-stylus:
     stylus [./src/stylus/*.stylus] -> [./dist/js/]
     then uglify it
     while concat it
     and watch origin
 :compile-stylus
-
-# then, while, and, +, and > are all keywords I have
-# created for you to make your tasking more fluid and enjoyable.
-
-# then, > | chainers
-# while, and, + | concurrentenators™
-
-# By following my 'stylus [path] to [path]' compiler
-# with 'then uglify it', I have created a chained task
-# that will not fire until the stylus compiler is finished.
 
 
 compileAndWatchCoffee:
@@ -66,38 +64,32 @@ compileAndWatchCoffee:
     then watch origin
 :compileAndWatchCoffee
 
-# it, them, origin, and origins all refer to previously 
-# used paths. origin will always refer to the very first 
-# path referenced in this task, origins will reference
-# the very first path referenced after each module call,
-# and it/them are the same thing, both referring to the 
-# most recent path reference. it and them are meant to
-# be used accordingly to help you style and understand
-# your code better.
-
-# (i.e, if most recent path is a directory, use it 
-# as it refers to a singular thing. If most recent
-# path was to a slew of files like [./path/**/*.*],
-# use the them keyword. It just makes sense. :)
-
 
 main:
   @compileAndWatchCoffee
   + @compileStylus
 :main
 
-# BOOM. Now we have a main build task that uses multiple
-# tasks that we have defined and runs them concurrently.
 ```
 
+ntm offers keywords that save you time, efford, and keystrokes. There are three categories of keywords: reference keywords, chaining keywords, and concurrency keywords. Keyword are *not* case sensitive.
 
-`stylus GO-NTM` is your module requirement. On line one of your `tasks.ntm` file, simple begin stating all of the different tools you plan to use in your tasking. Seperate them between lines, throw them in an array, whatever you like. One of the only rules is that your requirement list must end with GO-NTM.
+## Reference Keywords | `it` `them` `origin` `origins`
+  The keywords it and them provide identical functionality: acting as a variable holding the most recently parsed path. The only difference is the cases in which each should be used. If the previous [path] in the task block is a singular file or folder, using the it keyword makes sense to use. If the most recent path refers to multiple files or directories, them will make your code more readable.
+  
+  origin is similar to a variable that holds the value of the first path found in the entire task block, and origins refers to all paths that are the first in their row and directly following a module name.
 
-## **I'm a believer in team spirit.** *What can I say?*
+## Chaining Keywords | `then` `next` `>`
+  Each of these keywords indicate that the following module will be called to perform its task only when the previous task has been completed.
 
-<br>
+## Concurrency Keywords | `while` `and` `+`
+  Each of these keywords indicate that the following module can and will be called to perform its task at the same time as the previous task. These keywords should only be used on unrelated tasks, such as compiing Sass and Linting JavaScript. *You don't want to uglify and concatenate the same files at the same time.*
+  
+## @ Token | `@taskName`
+  While not a keyword, the @ token followed by a task name will import that task into the current task block. With the @ token, it is possible to define all of your individual tasks and then mix and match them to create larger build tasks.
 
-# The heart and soul of **ntm** `is` **npm**.
+# **ntm === npm && npm === ntm**
 
+ntm is npm, and that is all there is to it. Upon calling a task in your `tasks.ntm` file, the ntm styntax used to build the task definition is compiled direcly into the form of a script you would find in your `package.json` file and run in your terminal.
 
-ntm is npm, and that is all there is to it. Although I believe is a more than a language, that it is a system based on a beautiful compiled syntax, deep down I know that when you call that `ntm do-a-task` command, it is the power of npm that shines through.
+For example, if you have a task definition that includes `stylus [./src/styl/*.styl] to [./dist/css/]`, this like will be literally translated to `stylus ./src/styl/*.styl --out ./dist/css`, an executable command that Stylus users will be quite familiar with.
