@@ -22,6 +22,7 @@ Many respectable web developers vouch for npm as a build tool and task runner, b
 
 ***THIS APPLICATION IS NOT FUNCTIONAL*** *DO NOT TRY AT HOME*
 
+![ntm](http://s31.postimg.org/st3fxau9n/bigntm.jpg)
 ---
 <br>
 
@@ -98,16 +99,5 @@ main:
 
 # The heart and soul of **ntm** `is` **npm**.
 
-> ### 'npm is such a great build tool',they said
-> ### 'it is just so verbose and such a mess', they said.
----
-
-# **Here's ntm, I said. Thank me later.**
 
 ntm is npm, and that is all there is to it. Although I believe is a more than a language, that it is a system based on a beautiful compiled syntax, deep down I know that when you call that `ntm do-a-task` command, it is the power of npm that shines through.
-
-And maybe... Just maybe. One day we can all see that the one we needed was here for us all along, ready to care for our every need. <3 **npm**
-
-
----
-# **More docs and updates, coming soon. Star, watch, follow: do all the good things that you do, and check back daily.**
